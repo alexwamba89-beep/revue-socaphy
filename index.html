@@ -66,6 +66,46 @@ footer{border-top:1px solid var(--filet);padding:40px 0;color:var(--gris-400);fo
 </style>
 </head>
 <body>
+<div class="liste" id="liste"></div>
+  <script>
+const SB = window.supabase.createClient(
+  "https://sbcgnerfguafogdfqlxb.supabase.co",
+  "TA_CLE_ANON_PUBLIQUE"   // Project Settings > API > anon public
+);
+const TYPES = {
+  these:  ["these","These de doctorat"],
+  memoire:["memoire","Memoire de master"],
+  article:["article","Article scientifique"],
+  projet: ["projet","Projet"]
+};
+const echap = v => (v==null?"":String(v)).replace(/[&<>"]/g,
+  c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+async function chargerTravaux(){
+  const { data, error } = await SB.from("travaux")
+    .select("*").eq("publie", true).order("annee", { ascending:false });
+  const liste = document.getElementById("liste");
+  if (error){ liste.innerHTML = "<p>Erreur de chargement.</p>"; console.error(error); return; }
+  liste.innerHTML = data.map(t => {
+    const [cls,label] = TYPES[t.type] || ["article","Travail"];
+    const mots = (t.mots_cles||[]).map(m => `<span class="mot">${echap(m)}</span>`).join("");
+    const pdf  = t.pdf_url
+      ? `<a class="lien" href="${echap(t.pdf_url)}" target="_blank" rel="noopener">Consulter le PDF &rarr;</a>`
+      : "";
+    return `<article class="entree" data-type="${t.type}">
+      <div class="haut"><span class="type ${cls}">${label}</span><span class="annee">${echap(t.annee)}</span></div>
+      <h3>${echap(t.titre)}</h3>
+      <div class="auteurs">${echap(t.auteurs)}</div>
+      <div class="inst">${echap(t.institution)}</div>
+      <p class="resume">${echap(t.resume)}</p>
+      <div class="pied"><div class="mots">${mots}</div><span class="sep"></span>${pdf}</div>
+    </article>`;
+  }).join("");
+  const c = document.getElementById("compte");
+  if (c) c.textContent = data.length + (data.length>1 ? " travaux" : " travail");
+}
+chargerTravaux();
+</script>
 
 <header><div class="wrap nav">
   <a class="logo" href="#"><img src="socaphy-logo.png" class="mklogo" alt=""> SOCAphy <span style="color:var(--gris-400);font-weight:400">&middot; Revue</span></a>
