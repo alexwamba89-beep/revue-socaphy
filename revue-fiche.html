@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOCAphy - Fiche du travail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--vert-900:#052E1A;--vert-800:#0A4A2A;--vert-700:#0B6B3A;--vert-500:#2E8B57;--vert-100:#DDEDE3;--vert-050:#F4F8F5;
+--or-700:#8A6E10;--or-500:#C9A227;--or-050:#FBF6E7;--encre:#1A2620;--gris-600:#6A776F;--gris-400:#9AA69E;--filet:#ECEFEC;--papier:#FFFFFF;--brume:#FAFBFA;
+--titre:"Fraunces",Georgia,serif;--texte:"Inter",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--max:1000px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--texte);color:var(--encre);background:var(--brume);font-size:16px;line-height:1.6}
+h1,h2,h3{font-family:var(--titre);font-weight:600;line-height:1.2}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.mklogo{height:1.6em;width:auto;vertical-align:-.42em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:10px;background:var(--vert-700);color:#fff;font-weight:500;font-size:15px;border:none;cursor:pointer;width:100%}
+.btn:hover{background:var(--vert-900)}
+.btn.creux{background:transparent;color:var(--vert-700);border:1px solid var(--filet)}
+.btn.creux:hover{background:var(--vert-050)}
+header{background:#fff;border-bottom:1px solid var(--filet)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-family:var(--titre);font-size:19px;color:var(--vert-900);display:flex;align-items:center;gap:9px}
+.nav ul{display:flex;gap:24px;list-style:none;font-size:15px;color:var(--gris-600)}.nav ul a:hover{color:var(--vert-700)}
+@media(max-width:760px){.nav ul{display:none}}
+footer{border-top:1px solid var(--filet);padding:34px 0;color:var(--gris-400);font-size:14px;text-align:center;background:#fff;margin-top:24px}
+footer a{color:var(--gris-600)}footer a:hover{color:var(--vert-700)}
+
+.fil{font-size:13px;color:var(--gris-400);padding:22px 0 4px}.fil a:hover{color:var(--vert-700)}
+.corps{display:grid;grid-template-columns:1fr 300px;gap:40px;padding:14px 0 50px;align-items:start}
+@media(max-width:880px){.corps{grid-template-columns:1fr}}
+.type{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.type.these{color:var(--vert-700)}
+.tete .an{color:var(--gris-400);font-size:13.5px;margin-left:10px}
+.tete h1{font-size:clamp(26px,3.6vw,36px);color:var(--vert-900);font-weight:500;margin:10px 0 14px;line-height:1.25}
+.tete .aut{font-size:16px;color:var(--encre)}
+.tete .inst{color:var(--gris-400);font-size:14.5px;font-style:italic;margin-top:2px}
+.bloc{margin-top:34px}
+.bloc h2{font-family:var(--titre);font-size:20px;color:var(--vert-900);margin-bottom:14px;font-weight:500}
+.resume{color:var(--gris-600);font-weight:300;font-size:16px}
+.resume p{margin-bottom:12px}
+.mots{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.mot{font-size:13px;color:var(--vert-700);background:var(--vert-050);padding:4px 12px;border-radius:999px}
+/* Acteurs */
+.acteurs{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.acteur{display:flex;gap:12px;align-items:center;border:1px solid var(--filet);border-radius:12px;padding:14px;background:#fff}
+.ava{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--vert-700),var(--vert-500));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;flex-shrink:0}
+.acteur .n{font-size:15px;font-weight:500}.acteur .r{font-size:13px;color:var(--gris-400)}
+/* Applications */
+.apps{display:grid;gap:12px}
+.app{display:flex;gap:14px;border:1px solid var(--filet);border-left:3px solid var(--or-500);border-radius:0 10px 10px 0;padding:16px 18px;background:#fff}
+.app .ic{font-size:22px}
+.app b{display:block;font-size:15.5px;color:var(--vert-900);font-family:var(--texte);font-weight:600;margin-bottom:3px}
+.app span{color:var(--gris-600);font-size:14.5px;font-weight:300}
+/* Sidebar */
+.side{position:sticky;top:20px;border:1px solid var(--filet);border-radius:16px;padding:22px;background:#fff}
+.side .btn{margin-bottom:10px}
+.side ul{list-style:none;margin-top:16px;border-top:1px solid var(--filet);padding-top:16px;display:grid;gap:11px}
+.side li{display:flex;justify-content:space-between;font-size:14px;color:var(--gris-600)}.side li b{color:var(--encre);font-weight:500}
+.side .cite{margin-top:16px;border-top:1px solid var(--filet);padding-top:14px;font-size:12.5px;color:var(--gris-400);font-weight:300;font-style:italic}
+</style></head><body>
+<header><div class="wrap nav">
+  <a class="logo" href="index.html"><img src="socaphy-logo.png" class="mklogo" alt=""> SOCAphy <span style="color:var(--gris-400);font-weight:400">&middot; Revue</span></a>
+  <ul><li><a href="index.html">Dépôt</a></li><li><a href="revue-soumettre.html">Soumettre</a></li><li><a href="https://socaphy.org">Site principal</a></li></ul>
+</div></header>
+<div class="wrap">
+  <div class="fil"><a href="index.html">Dépôt</a> &rsaquo; Thèses &rsaquo; <span style="color:var(--gris-600)">Inhibiteurs enzymatiques…</span></div>
+  <div class="corps">
+    <article>
+      <div class="tete">
+        <span class="type these">Thèse de doctorat</span><span class="an">2026 · En cours</span>
+        <h1>Inhibiteurs enzymatiques issus de la flore camerounaise</h1>
+        <div class="aut">N. Mbarga</div>
+        <div class="inst">Université de Yaoundé I — Faculté des Sciences</div>
+      </div>
+
+      <div class="bloc">
+        <h2>Résumé</h2>
+        <div class="resume">
+          <p>Cette recherche vise l'identification de molécules d'origine végétale capables d'inhiber des enzymes clés du métabolisme glucidique, en particulier l'alpha-glucosidase, dans une perspective de valorisation thérapeutique des plantes de la pharmacopée camerounaise.</p>
+          <p>À partir d'extraits de plusieurs espèces de la flore locale, un criblage phytochimique et des tests d'inhibition enzymatique ont été conduits, suivis de l'isolement et de la caractérisation structurale des composés les plus actifs. Les résultats ouvrent des pistes pour le développement de compléments et de phytomédicaments antidiabétiques.</p>
+        </div>
+        <div class="mots"><span class="mot">alpha-glucosidase</span><span class="mot">métabolisme glucidique</span><span class="mot">phytochimie</span><span class="mot">antidiabétique</span></div>
+      </div>
+
+      <div class="bloc">
+        <h2>Acteurs principaux</h2>
+        <div class="acteurs">
+          <div class="acteur"><div class="ava">NM</div><div><div class="n">N. Mbarga</div><div class="r">Auteur (doctorant)</div></div></div>
+          <div class="acteur"><div class="ava">JE</div><div><div class="n">Pr. J. Etoa</div><div class="r">Directeur de thèse</div></div></div>
+          <div class="acteur"><div class="ava">SA</div><div><div class="n">Dr. S. Abena</div><div class="r">Co-encadrante</div></div></div>
+          <div class="acteur"><div class="ava">UY</div><div><div class="n">Université de Yaoundé I</div><div class="r">Institution</div></div></div>
+        </div>
+      </div>
+
+      <div class="bloc">
+        <h2>Applications et retombées</h2>
+        <div class="apps">
+          <div class="app"><span class="ic">&#128138;</span><div><b>Piste thérapeutique antidiabétique</b><span>Molécules candidates pour des compléments ou phytomédicaments régulant la glycémie.</span></div></div>
+          <div class="app"><span class="ic">&#127807;</span><div><b>Valorisation de la flore locale</b><span>Documentation scientifique d'espèces camerounaises à fort potentiel pharmacologique.</span></div></div>
+          <div class="app"><span class="ic">&#128218;</span><div><b>Publication associée</b><span>Résultats en cours de soumission dans une revue à comité de lecture.</span></div></div>
+        </div>
+      </div>
+    </article>
+
+    <aside class="side">
+      <a href="revue-pdf.html" class="btn">&#128196; Voir le PDF</a>
+      <a href="#" class="btn creux">Télécharger</a>
+      <ul>
+        <li><span>Type</span><b>Thèse</b></li>
+        <li><span>Année</span><b>2026</b></li>
+        <li><span>Statut</span><b>En cours</b></li>
+        <li><span>Domaine</span><b>Phytochimie</b></li>
+        <li><span>Langue</span><b>Français</b></li>
+      </ul>
+      <div class="cite">Mbarga N. (2026). Inhibiteurs enzymatiques issus de la flore camerounaise. Université de Yaoundé I. SOCAphy.</div>
+    </aside>
+  </div>
+</div>
+
+<footer><div class="wrap"><a href="https://socaphy.org">Site principal</a> &nbsp;&middot;&nbsp; <a href="index.html">Revue</a> &nbsp;&middot;&nbsp; <a href="https://formation.socaphy.org">Formations</a><br><br>&copy; 2026 SOCAphy - template de démonstration</div></footer>
+</body></html>

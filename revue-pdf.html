@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOCAphy - Lecture du document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--vert-900:#052E1A;--vert-800:#0A4A2A;--vert-700:#0B6B3A;--vert-500:#2E8B57;--vert-100:#DDEDE3;--vert-050:#F4F8F5;
+--or-700:#8A6E10;--or-500:#C9A227;--or-050:#FBF6E7;--encre:#1A2620;--gris-600:#6A776F;--gris-400:#9AA69E;--filet:#ECEFEC;--papier:#FFFFFF;--brume:#FAFBFA;
+--titre:"Fraunces",Georgia,serif;--texte:"Inter",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--max:1000px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--texte);color:var(--encre);background:var(--brume);font-size:16px;line-height:1.6}
+h1,h2,h3{font-family:var(--titre);font-weight:600;line-height:1.2}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.mklogo{height:1.6em;width:auto;vertical-align:-.42em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:10px;background:var(--vert-700);color:#fff;font-weight:500;font-size:15px;border:none;cursor:pointer;width:100%}
+.btn:hover{background:var(--vert-900)}
+.btn.creux{background:transparent;color:var(--vert-700);border:1px solid var(--filet)}
+.btn.creux:hover{background:var(--vert-050)}
+header{background:#fff;border-bottom:1px solid var(--filet)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-family:var(--titre);font-size:19px;color:var(--vert-900);display:flex;align-items:center;gap:9px}
+.nav ul{display:flex;gap:24px;list-style:none;font-size:15px;color:var(--gris-600)}.nav ul a:hover{color:var(--vert-700)}
+@media(max-width:760px){.nav ul{display:none}}
+footer{border-top:1px solid var(--filet);padding:34px 0;color:var(--gris-400);font-size:14px;text-align:center;background:#fff;margin-top:24px}
+footer a{color:var(--gris-600)}footer a:hover{color:var(--vert-700)}
+
+body{background:#333a36;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.toolbar{background:var(--vert-900);color:#fff;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;flex-shrink:0}
+.toolbar .g{display:flex;align-items:center;gap:14px;min-width:0}
+.toolbar a.retour{color:rgba(255,255,255,.8);font-size:20px}
+.toolbar .titre{font-family:var(--titre);font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toolbar .d{display:flex;align-items:center;gap:10px}
+.toolbar .pg{font-size:13px;color:rgba(255,255,255,.7)}
+.toolbar button{background:rgba(255,255,255,.12);color:#fff;border:none;border-radius:7px;padding:7px 11px;font-size:13px;cursor:pointer;font-family:var(--texte)}
+.toolbar button:hover{background:var(--vert-700)}
+.toolbar .tel{background:var(--or-500);color:#1a1400}.toolbar .tel:hover{background:#d8b23a}
+.zone{flex:1;overflow-y:auto;display:flex;flex-direction:column;align-items:center;padding:26px 16px;gap:20px}
+/* Aperçu : en production, remplacer ce bloc par <iframe src="URL_DU_PDF"> */
+.page{background:#fff;width:min(760px,94%);aspect-ratio:1/1.414;box-shadow:0 10px 30px rgba(0,0,0,.3);border-radius:2px;padding:56px 60px}
+.page h2{font-family:var(--titre);color:var(--vert-900);font-size:22px;margin-bottom:6px}
+.page .sub{color:var(--gris-400);font-size:13px;margin-bottom:26px}
+.page .l{height:11px;background:#eef1ee;border-radius:3px;margin-bottom:11px}
+.page .l.c{width:92%}.page .l.d{width:78%}.page .l.s{width:40%;margin-top:22px;margin-bottom:16px;background:#e2e8e3;height:13px}
+.hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;font-size:12.5px;padding:8px 14px;border-radius:999px}
+</style></head><body>
+
+<div class="toolbar">
+  <div class="g">
+    <a class="retour" href="revue-fiche.html" title="Retour à la fiche">&larr;</a>
+    <span class="titre">Inhibiteurs enzymatiques issus de la flore camerounaise</span>
+  </div>
+  <div class="d">
+    <span class="pg">Page 1 / 84</span>
+    <button>&minus;</button><button>+</button>
+    <button class="tel">&#8681; Télécharger</button>
+  </div>
+</div>
+
+<div class="zone">
+  <!-- EN PRODUCTION : remplacer les deux .page par : <iframe src="URL_DU_PDF" style="width:min(760px,94%);height:100%;border:none;border-radius:2px"></iframe> -->
+  <div class="page">
+    <h2>Inhibiteurs enzymatiques issus de la flore camerounaise</h2>
+    <div class="sub">N. Mbarga — Université de Yaoundé I — 2026</div>
+    <div class="l s"></div><div class="l"></div><div class="l c"></div><div class="l d"></div><div class="l"></div><div class="l c"></div>
+    <div class="l s"></div><div class="l"></div><div class="l d"></div><div class="l c"></div><div class="l"></div>
+  </div>
+  <div class="page">
+    <div class="l s"></div><div class="l"></div><div class="l c"></div><div class="l"></div><div class="l d"></div><div class="l"></div><div class="l c"></div>
+    <div class="l s"></div><div class="l"></div><div class="l c"></div><div class="l d"></div>
+  </div>
+</div>
+
+<div class="hint">Aperçu de démonstration — le vrai PDF s'affichera ici une fois le document déposé</div>
+</body></html>
